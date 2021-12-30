@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="gameFragment"
+            type="com.example.rockpaperscissors.GameFragment" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bg_triangle"
+            android:scaleX=".75"
+            android:scaleY=".75"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vertical_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".4" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vertical_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".62" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/horizontal_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".25" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/horizontal_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".75" />
+
+        <ImageView
+            android:id="@+id/paper"
+            style="@style/Paper"
+            app:layout_constraintStart_toEndOf="@id/horizontal_start"
+            app:layout_constraintBottom_toTopOf="@id/vertical_start"
+            app:layout_constraintEnd_toStartOf="@id/horizontal_start"
+            app:layout_constraintTop_toBottomOf="@id/vertical_start"/>
+
+        <ImageView
+            android:id="@+id/rock"
+            style="@style/Rock"
+            app:layout_constraintStart_toEndOf="@id/horizontal_start"
+            app:layout_constraintBottom_toTopOf="@id/vertical_end"
+            app:layout_constraintEnd_toStartOf="@id/horizontal_end"
+            app:layout_constraintTop_toBottomOf="@id/vertical_end"/>
+
+        <ImageView
+            android:id="@+id/scissors"
+            style="@style/Scissors"
+            app:layout_constraintStart_toEndOf="@id/horizontal_end"
+            app:layout_constraintBottom_toTopOf="@id/vertical_start"
+            app:layout_constraintEnd_toStartOf="@id/horizontal_end"
+            app:layout_constraintTop_toBottomOf="@id/vertical_start"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
